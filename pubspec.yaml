@@ -1,7 +1,7 @@
 name: to_string_pretty
 description: Prints an object pretty.
 version: 1.0.0
-
+repository: https://github.com/pubmskim/to_string_pretty
 environment:
   sdk: '>=2.10.0 <3.0.0'
 
