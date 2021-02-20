@@ -4,6 +4,8 @@ Prints an object pretty.
 
 ## Example
 
+[**Example code**](https://github.com/pubmskim/to_string_pretty/blob/main/example/to_string_pretty_example.dart)
+
 ```dart
 // ChatUser, ChatDateTime ...
 
