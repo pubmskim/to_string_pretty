@@ -31,7 +31,7 @@ void main() {
 
 - **Result**
 
-```
+```shell
 ChatMessage {
     body: Thanks,
     sentBy: ChatUser {
