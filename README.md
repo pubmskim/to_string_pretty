@@ -81,7 +81,7 @@ import 'package:to_string_pretty/to_string_pretty.dart';
 
 - It is recommended to use toStringPretty() in the toString() method of all Classes.
 
-  > In my case, I am using this method as the standard logging format for my project. 
+  > In my case, I am using toStringPretty() as the standard logging format for my project. 
 
 
 
