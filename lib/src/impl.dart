@@ -44,6 +44,7 @@
 String toStringPretty(Object object, [Map<String, Object> values]) {
   if (object is Iterable) return _toPrettyIterable(object);
   if (object is Map) return _toPrettyMap(object);
+  if (object is Set) return _toPrettySet(object);
 
   final buf = StringBuffer();
 
@@ -66,6 +67,8 @@ Iterable<String> _shiftln(Object obj, [String name]) sync* {
     str = '$name: ${_toPrettyIterable(obj)}';
   } else if (obj is Map) {
     str = '$name: ${_toPrettyMap(obj)}';
+  } else if (obj is Set) {
+    str = '$name: ${_toPrettySet(obj)}';
   } else if (name != null) {
     str = '$name: $obj';
   } else {
@@ -91,11 +94,33 @@ String _toPrettyIterable(Iterable iter) {
       buf.writeAll(_shiftln(_toPrettyIterable(item)));
     } else if (item is Map) {
       buf.writeAll(_shiftln(_toPrettyMap(item)));
+    } else if (item is Set) {
+      buf.writeAll(_shiftln(_toPrettySet(item)));
     } else {
       buf.writeAll(_shiftln(item.toString()));
     }
   }
   buf.write('],');
+  return buf.toString();
+}
+
+String _toPrettySet(Set iter) {
+  if (iter.isEmpty) return '{}';
+
+  final buf = StringBuffer();
+  buf.writeln('{');
+  for (final item in iter) {
+    if (item is Iterable) {
+      buf.writeAll(_shiftln(_toPrettyIterable(item)));
+    } else if (item is Map) {
+      buf.writeAll(_shiftln(_toPrettyMap(item)));
+    } else if (item is Set) {
+      buf.writeAll(_shiftln(_toPrettySet(item)));
+    } else {
+      buf.writeAll(_shiftln(item.toString()));
+    }
+  }
+  buf.write('},');
   return buf.toString();
 }
 
@@ -110,6 +135,8 @@ String _toPrettyMap(Map map) {
       str += _toPrettyIterable(value);
     } else if (value is Map) {
       str += _toPrettyMap(value);
+    } else if (value is Set) {
+      buf.writeAll(_shiftln(_toPrettySet(value)));
     } else {
       str += value.toString();
     }
