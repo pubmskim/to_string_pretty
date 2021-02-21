@@ -14,6 +14,22 @@ import 'package:to_string_pretty/to_string_pretty.dart';
 ```
 
 
+<<<<<<< HEAD
+=======
+```shell
+ChatMessage {
+    body: Thanks,
+    sentBy: ChatUser {
+        email: hello@example.com,
+        name: Liam,
+    },
+    sentAt: ChatDateTime {
+        datetime: 2021-02-21 19:07:00.000,
+    },
+    group: Flutter Community,
+},
+```
+>>>>>>> 12f2fef37e78f4dd0389464517f8d75577a3dbfe
 
 ## Usage
 
