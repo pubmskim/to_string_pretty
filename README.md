@@ -68,20 +68,6 @@ import 'package:to_string_pretty/to_string_pretty.dart';
 
 
 
-## Limitations
-
-- You have to manually specify the values to be displayed.
-
-  ```dart
-  toStringPretty(someInstance, <String, Object>{
-  	'key1': value1,
-  	'key2': value2,
-  });
-  ```
-
-- It is recommended to use toStringPretty() in the toString() method of all Classes.
-
-  > In my case, I am using toStringPretty() as the standard logging format for my project. 
 
 
 
