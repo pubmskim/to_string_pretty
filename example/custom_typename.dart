@@ -1,7 +1,7 @@
 import 'package:to_string_pretty/to_string_pretty.dart';
 
 void main() {
-  final json = <String, dynamic>{
+  final json = {
     'url': 'https://pub.dev',
     'packages': [
       'shared_preferences',

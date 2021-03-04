@@ -41,7 +41,7 @@
 ///    },
 ///},
 /// ```
-String toStringPretty(Object object, [Map<String, Object> values]) {
+String toStringPretty(Object object, [Map<String, Object>? values]) {
   if (object is Iterable) return _toPrettyIterable(object);
   if (object is Map) return _toPrettyMap(object);
   if (object is Set) return _toPrettySet(object);
@@ -61,7 +61,7 @@ String toStringPretty(Object object, [Map<String, Object> values]) {
   return buf.toString();
 }
 
-Iterable<String> _shiftln(Object obj, [String name]) sync* {
+Iterable<String> _shiftln(Object obj, [String? name]) sync* {
   String str;
   if (obj is Iterable) {
     str = '$name: ${_toPrettyIterable(obj)}';
