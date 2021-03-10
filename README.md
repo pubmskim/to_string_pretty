@@ -1,5 +1,3 @@
-## toStringPretty
-
 Prints an object pretty.
 
 ## Installing
@@ -23,14 +21,13 @@ import 'package:to_string_pretty/to_string_pretty.dart';
   ```
 
   ```
-  // stdout
   [
       google,
       apple,
       thanks,
   ],
   ```
-
+  
 - **toString()** 
 
   [**Code**](https://github.com/pubmskim/to_string_pretty/blob/main/example/to_string_pretty_example.dart)
@@ -52,7 +49,6 @@ import 'package:to_string_pretty/to_string_pretty.dart';
   ```
 
   ```
-  // stdout
   ChatMessage {
       body: Thanks,
       sentBy: ChatUser {
@@ -66,9 +62,33 @@ import 'package:to_string_pretty/to_string_pretty.dart';
   },
   ```
 
+- **Customizing type name.**
 
+  ```dart
+  final json = {
+    'url': 'https://pub.dev',
+    'packages': [
+      'shared_preferences',
+      'flutter_slidable',
+    ],
+    'datetime': DateTime.parse('2021-02-18T19:51:57.4139787-07:00'),
+    'fieldCount': 4,
+  };
+  
+  print(toStringPretty('JsonType', json));
+  ```
 
-
+  ```
+  JsonType {
+      url: https://pub.dev,
+      packages: [
+          shared_preferences,
+          flutter_slidable,
+      ],
+      datetime: 2021-02-19 02:51:57.413978Z,
+      fieldCount: 4,
+  },
+  ```
 
 
 ## Feature requests and Bug reports
