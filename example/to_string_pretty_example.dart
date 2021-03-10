@@ -1,10 +1,9 @@
 import 'package:to_string_pretty/to_string_pretty.dart';
-import 'package:meta/meta.dart';
 
 class ChatMessage {
   final String message = 'Thanks';
   final ChatUser sentBy = ChatUser();
-  final ChatDateTime sentAt = ChatDateTime(DateTime(2021, 02, 21, 19, 07));
+  final ChatDateTime sentAt = ChatDateTime();
   final String group = 'Flutter Community';
 
   @override
@@ -21,8 +20,6 @@ class ChatUser {
   final name = 'Liam';
   final _isNameVisible = true;
 
-  ChatUser();
-
   @override
   String toString() => toStringPretty(this, {
         'email': email,
@@ -31,9 +28,7 @@ class ChatUser {
 }
 
 class ChatDateTime {
-  final DateTime datetime;
-
-  ChatDateTime(this.datetime);
+  final DateTime datetime = DateTime(2021, 02, 21, 19, 07);
 
   @override
   String toString() => toStringPretty(this, {
