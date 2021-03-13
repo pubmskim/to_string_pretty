@@ -1,4 +1,4 @@
-/// Formats the desired object pretty.
+/// Stringfy any object pretty.
 ///
 /// [Example:]
 /// ```dart
