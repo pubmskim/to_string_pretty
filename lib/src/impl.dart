@@ -49,7 +49,11 @@ String toStringPretty(Object object, [Map<String, Object>? values]) {
   final buf = StringBuffer();
 
   if (object is String) {
-    buf.writeln('$object {');
+    if (object.isEmpty) {
+      buf.writeln('{');
+    } else {
+      buf.writeln('${object} {');
+    }
   } else {
     buf.writeln('${object.runtimeType} {');
   }
